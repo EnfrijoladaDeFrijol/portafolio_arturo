@@ -19,7 +19,7 @@ const { projects } = Astro.props;
           style={`top: ${top}px;`}
           class="sticky mb-12 rounded-2xl border border-glass-border"
         >
-          <div class="relative z-1 grid h-145 w-full grid-rows-2 overflow-hidden rounded-2xl sm:grid-cols-2 sm:grid-rows-1 md:h-96" style="background: rgba(10, 18, 26, 0.8); backdrop-filter: blur(16px);">
+          <div class="relative z-1 flex h-auto w-full flex-col overflow-hidden rounded-2xl sm:grid sm:h-144 sm:grid-cols-2 sm:grid-rows-1 md:h-96" style="background: rgba(10, 18, 26, 0.8); backdrop-filter: blur(16px);">
             <!-- Subtle gradient overlay -->
             <div class="pointer-events-none absolute inset-0 z-0 rounded-2xl" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.04) 0%, transparent 50%, rgba(5, 150, 105, 0.03) 100%);"></div>
 
@@ -64,7 +64,7 @@ const { projects } = Astro.props;
                 )}
               </div>
             </div>
-            <div class="relative z-10 flex items-end justify-end overflow-hidden">
+            <div class="relative z-10 flex h-72 items-end justify-end overflow-hidden sm:h-full">
               <Image
                 class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-cover object-top-left sm:h-[85%] sm:w-full"
                 src={image}
