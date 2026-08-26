@@ -1,23 +1,23 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Arturo Meza Sánchez — Ingeniero en Computación",
+  author: "Arturo Meza Sánchez",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-  lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+    "Ingeniero en Computación egresado de la UNAM. Especialista en desarrollo web (Next.js), administración de servidores Linux y sistemas embebidos. CDMX, México.",
+  lang: "es",
+  siteLogo: "/perfil.jpg",
   navLinks: [
-    { text: "Experience", href: "#experience" },
-    { text: "Projects", href: "#projects" },
-    { text: "About", href: "#about" },
+    { text: "Experiencia", href: "#experience" },
+    { text: "Proyectos", href: "#projects" },
+    { text: "Trayectoria", href: "#highlights" },
+    { text: "Skills", href: "#skills" },
+    { text: "Sobre mí", href: "#about" },
   ],
   socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
+    { text: "GitHub", href: "https://github.com/EnfrijoladaDeFrijol" },
+    { text: "LinkedIn", href: "https://linkedin.com/in/arturo-meza-5176252a9" },
+    { text: "Email", href: "mailto:arturomezsanchez@gmail.com" },
   ],
   socialImage: "/zen-og.png",
   canonicalURL: "https://astro-zen.vercel.app",
@@ -25,74 +25,173 @@ export const SITE_CONFIG: SiteConfig = {
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
+    name: "Arturo Meza",
+    specialty: "Ingeniero en Computación",
     summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+      "Egresado de la UNAM (100% créditos). Especialista en desarrollo web con Next.js, administración de servidores Linux y diseño de sistemas embebidos. Apasionado por resolver problemas y competir en hackatones.",
+    email: "arturomezsanchez@gmail.com",
+    location: "CDMX, México",
   },
   experience: [
     {
-      company: "Zalmart",
-      position: "Lead Android Developer",
-      startDate: "May 2018",
-      endDate: "Sept 2020",
+      company: "PROTECO / PROTECSA (UNAM)",
+      position: "Coordinador de Proyectos",
+      startDate: "Feb 2024",
+      endDate: "Dic 2024",
       summary: [
-        "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-        "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-        "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+        "Desarrollo full-stack del sitio web institucional usando Next.js con despliegue en nube (Cloudflare + Vercel).",
+        "Profesor de Linux y programación en el Curso Latinoamericano SIAFI, impartiendo conocimientos a estudiantes de toda la región.",
+        "Formando en programación en diversas tecnologías para distintos niveles de experiencia, desde la preparatoria hasta el nivel universitario.",
+        "Proyecto de mejora en ciberseguridad del Servidor de PROTECO, en Redhat",
       ],
     },
     {
-      company: "Bankit",
-      position: "Mobile Developer",
-      startDate: "Feb 2017",
-      endDate: "May 2018",
+      company: "Smeisa",
+      position: "Administrador de Servidor Ubuntu",
+      startDate: "Ene 2024",
+      endDate: "Dic 2024",
       summary: [
-        "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-        "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
+        "Mantenimiento y administración de servidor Ubuntu para operaciones empresariales.",
+        "Implementación de Plane (Project Manager) con Docker Compose para gestión de proyectos del equipo.",
       ],
     },
     {
-      company: "Driveer",
-      position: "Frontend Developer",
-      startDate: "Jun 2015",
-      endDate: "Oct 2016",
-      summary:
-        "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
+      company: "Serviap",
+      position: "Desarrollador Web Jr.",
+      startDate: "Nov 2023",
+      endDate: "May 2024",
+      summary: [
+        "Desarrollo de aplicaciones web e integración de bases de datos para plataformas internas.",
+        "Creación de herramientas internas con Airtable para automatización de procesos empresariales.",
+      ],
     },
   ],
   projects: [
     {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/spotifu.png",
+      name: "Sitio Institucional PROTECSA",
+      summary:
+        "Arquitectura Frontend en Next.js con despliegue en Vercel. Sitio web institucional para el programa de tecnología y ciencia de la UNAM.",
+      linkPreview: "https://protecsa-website-git-main-arthurs-projects-32b28715.vercel.app/",
+      linkSource: "https://github.com/EnfrijoladaDeFrijol/protecsa-website/tree/main",
+      image: "/protecsa.jpg",
+      tags: ["Next.js", "TypeScript", "React", "Vercel", "Cloudflare"],
     },
     {
-      name: "Shopp App",
-      summary: "An e-commerce platform that replicates Shopify's key features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/shopify-clon.png",
+      name: "Estética París Narvarte",
+      summary:
+        "Landing page profesional para negocio local. Diseño responsive con enfoque en conversión y experiencia de usuario.",
+      linkPreview: "https://estetica-paris-xi.vercel.app/",
+      linkSource: "https://github.com/EnfrijoladaDeFrijol/estetica-paris/tree/master",
+      image: "/estetica-paris.jpg",
+      tags: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Astro",
+        "Tailwind CSS",
+        "Vercel",
+        "Google Maps API",
+        "WhatsApp API"
+      ],
     },
     {
-      name: "ClonTagram",
-      summary: "A social network that replicates the features of Instagram",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/clone-ig.png",
+      name: "Plataforma FacMed MOLIMOD",
+      summary: "Plataforma web para la FacMed (UNAM). Migración de Google Forms a sistema web con base de datos relacional para Recursos Humanos.",
+      linkPreview: "https://drive.google.com/file/d/1IgMXua0GIN613obWJfUYEEZS9rVf7Ka2/view?usp=sharing",
+      linkSource: "https://github.com/EnfrijoladaDeFrijol/Plataforma_facmed_MOLIMOD.git",
+      image: "/facmed_plataforma.png",
+      tags: ["Python", "Django", "PostgreSQL", "Docker"],
     },
+    {
+      name: "Hackathon 2026 Swift Change Makers",
+      summary:
+        "4to lugar — Desarrollo de aplicación iOS «AIda» en hackathon internacional.",
+      linkPreview: "https://drive.google.com/file/d/1mzVYx37CYNEsJjXidVk9m3-cpi87lWFn/view?usp=sharing",
+      linkSource: "https://github.com/EnfrijoladaDeFrijol/Aida_app.git",
+      image: "/equipo26.jpeg",
+      tags: ["Swift", "iOS", "SwiftUI"],
+    },
+    {
+      name: "AR-Beat",
+      summary: "Aplicación de Realidad Aumentada que convierte un escritorio en un estudio musical. Utiliza la cámara y tarjetas para proyectar instrumentos en 3D, permitiendo mezclar sonidos en tiempo real.",
+      linkPreview: "https://drive.google.com/file/d/1baO9M7C3RVnp6SigElnULtvXYQhMD-fD/view?usp=sharing",
+      linkSource: "https://github.com/EnfrijoladaDeFrijol/Proyecto_AR.git",
+      image: "/AR-Beat.jpg",
+      tags: ["Unity 6", "C#", "3ds Max", "Realidad Aumentada", "Android"],
+    }
   ],
   about: {
-    description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
+    description: `Soy Arturo Meza Sánchez, Ingeniero en Computación egresado de la UNAM con el 100% de créditos completados. Me especializo en el desarrollo web con Next.js, la administración de servidores Linux (Arch, Debian, Ubuntu) y la docencia tecnológica.
 
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
-    `,
-    image: "/alejandro-big.jpg",
+Me apasiona resolver problemas complejos integrando software y hardware — desde sistemas embebidos con Arduino y Raspberry Pi hasta diseños en FPGA con VHDL. Soy competidor activo en hackatones de alto rendimiento como IEEExtreme y Swift Change Makers, donde he fortalecido mi capacidad de trabajar bajo presión y entregar soluciones creativas en tiempo récord.`,
+    image: "/perfil.jpg",
   },
+  skills: [
+    {
+      category: "Frontend & UI",
+      items: ["TypeScript", "JavaScript", "Next.js", "React", "HTML/CSS", "Astro"],
+    },
+    {
+      category: "Backend & Arquitectura",
+      items: ["C#", "Python", "Java", "NestJS", "Django", "Python"],
+    },
+    {
+      category: "Bases de Datos",
+      items: ["PostgreSQL", "MySQL", "Modelado E-R"],
+    },
+    {
+      category: "DevOps & OS",
+      items: ["Linux (Arch / Debian / Ubuntu Server)", "Bash", "Docker", "Git / GitHub"],
+    },
+    {
+      category: "Hardware & Sistemas Embebidos",
+      items: ["Arduino Uno", "Raspberry Pi Pico", "FPGA (VHDL)"],
+    },
+    {
+      category: "Métodlogias Ágiles",
+      items: ["SCRUM"],
+    },
+  ],
+  highlights: [
+    {
+      icon: "🎓",
+      title: "Docencia",
+      items: [
+        { text: "Curso de Linux — Curso Latinoamericano (SIAFI)" },
+        { text: "Curso de Programación en Linux, Python, IA — PROTECO, UNAM" },
+        { text: "Curso de Administración de Servidores — PROTECO, UNAM" },
+        { text: "Plática IEEE Day, IEEE 802.11 y el Wifi — IEEE, UNAM", link: "certificados/IEEE-Day.pdf" }
+      ],
+    },
+    {
+      icon: "🏆",
+      title: "Hackatones",
+      items: [
+        { text: "IEEExtreme 17.0 (2023) — Competencia internacional de programación, 24 horas", },
+        { text: "IEEExtreme 18.0 (2024) — Competencia internacional de programación, 24 horas", },
+        { text: "IEEExtreme 19.0 (2025) — Competencia internacional de programación, 24 horas", link: "/certificados/Certificate_IEEEXtreme19_Luis_Arturo_Meza_Sánchez.pdf" },
+        { text: "Swift Change Makers 2025 — 5to lugar, desarrollo de app iOS «Lumi»", link: "/certificados/CartaJustiHack2025_Meza.pdf" },
+        { text: "Swift Change Makers 2026 — 4to lugar, desarrollo de app iOS «AIda»", link: "/certificados/CartaJustiHack2026_Meza.pdf" },
+      ],
+    },
+    {
+      icon: "📖",
+      title: "Programas & Asociaciones",
+      items: [
+        { text: "PROTECO (Programa de Tecnología en Cómputo) — Becario, Coordinador de Proyectos UNAM (2023–2024)" },
+        { text: "PROTECSA — Becario Fundador, UNAM (2025)" },
+        { text: "SIAFI — Sociedad de Inteligencia Artificial de la Facultad de Ingeniería" },
+        { text: "IEEE — Computer Society - Rama estudiantil UNAM" },
+      ],
+    },
+    {
+      icon: "📋",
+      title: "Certificaciones y Diplomados",
+      items: [
+        { text: "Scrum Fundamentals Certified (SFC) — SCRUMstudy", link: "/certificados/SCRUM.pdf" },
+        { text: "Marketing Strategy Fundamentals (SCMS-F) — SMstudy", link: "/certificados/Marketing.pdf" },
+        { text: "Diplomado en Liderazgo — (En curso)" },
+      ],
+    }
+  ],
 };
-
-// #5755ff

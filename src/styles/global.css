@@ -4,10 +4,17 @@
   --font-sans: var(--font-be-vietnam-pro);
   --font-serif: var(--font-gabarito);
 
-  --color-primary: #2563eb;
+  /* Liquid Glass Emerald Palette */
+  --color-primary: #10b981;
+  --color-primary-light: #34d399;
+  --color-primary-dark: #059669;
   --color-neutral: #94a3b8;
   --color-white: #e2e8f0;
-  --color-black: #0e141b;
+  --color-black: #050a0e;
+  --color-glass: rgba(16, 185, 129, 0.04);
+  --color-glass-border: rgba(16, 185, 129, 0.12);
+  --color-glass-bg: rgba(10, 18, 26, 0.65);
+  --color-surface: #0a121a;
 
   --text-xs: 0.875rem;
   --text-xs--line-height: 1.125rem;
@@ -41,6 +48,8 @@
   --tracking-tight: -0.25px;
 
   --animate-slide-in: slide-in 600ms ease both;
+  --animate-glow-pulse: glow-pulse 4s ease-in-out infinite;
+  --animate-fade-in-up: fade-in-up 700ms ease both;
 
   @keyframes slide-in {
     10% {
@@ -50,4 +59,132 @@
       transform: translateY(0);
     }
   }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ── Glass Utility Classes ── */
+@utility glass-card {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-glass-border);
+  border-radius: 1rem;
+}
+
+@utility glass-header {
+  background: rgba(5, 10, 14, 0.7);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.08);
+}
+
+@utility glass-btn {
+  background: rgba(16, 185, 129, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@utility glass-badge {
+  background: rgba(16, 185, 129, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+@utility section-line {
+  position: relative;
+  padding-left: 1rem;
+}
+
+/* ── Hover & Pseudo States (standard CSS) ── */
+.glass-card-hover {
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-glass-border);
+  border-radius: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.08), inset 0 0 30px rgba(16, 185, 129, 0.03);
+}
+
+.glass-btn:hover {
+  background: rgba(16, 185, 129, 0.22);
+  border-color: rgba(52, 211, 153, 0.5);
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.2), 0 0 60px rgba(16, 185, 129, 0.08);
+}
+
+.glass-badge:hover {
+  background: rgba(16, 185, 129, 0.16);
+  border-color: rgba(52, 211, 153, 0.35);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.12);
+}
+
+/* ── Section Decorative Line ── */
+.section-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--color-primary), transparent);
+  border-radius: 9999px;
+}
+
+/* ── Liquid Background Blobs ── */
+.liquid-bg {
+  position: relative;
+}
+
+.liquid-bg::before {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(ellipse, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: glow-pulse 8s ease-in-out infinite;
+}
+
+.liquid-bg::after {
+  content: '';
+  position: fixed;
+  bottom: -20%;
+  right: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(ellipse, rgba(5, 150, 105, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: glow-pulse 10s ease-in-out infinite reverse;
 }

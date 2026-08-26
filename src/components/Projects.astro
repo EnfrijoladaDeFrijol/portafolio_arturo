@@ -10,41 +10,63 @@ interface Props {
 const { projects } = Astro.props;
 ---
 
-<Section text="Featured Projects" href="projects">
+<Section text="Proyectos Destacados" href="projects">
   {
-    projects.map(({ name, summary, image, linkPreview, linkSource }, index) => {
+    projects.map(({ name, summary, image, linkPreview, linkSource, tags }, index) => {
       const top = 98 + index * 40;
       return (
         <div
           style={`top: ${top}px;`}
-          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
+          class="sticky mb-12 rounded-2xl border border-glass-border"
         >
-          <div class="bg-difu relative z-1 grid h-145 w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
-            <div class="px-6 pt-12">
-              <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
+          <div class="relative z-1 grid h-145 w-full grid-rows-2 overflow-hidden rounded-2xl sm:grid-cols-2 sm:grid-rows-1 md:h-96" style="background: rgba(10, 18, 26, 0.8); backdrop-filter: blur(16px);">
+            <!-- Subtle gradient overlay -->
+            <div class="pointer-events-none absolute inset-0 z-0 rounded-2xl" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.04) 0%, transparent 50%, rgba(5, 150, 105, 0.03) 100%);"></div>
+
+            <div class="relative z-10 flex flex-col px-6 pt-8 sm:pt-10">
+              <h3 class="mb-3 font-serif text-2xl font-medium text-primary sm:text-3xl">
                 {name}
               </h3>
-              <p class="text-base text-neutral">{summary}</p>
-              <div class="flex gap-5 pt-10 text-white">
-                <a
-                  href={linkSource}
-                  target="_blank"
-                  class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
-                >
-                  Source
-                </a>
-                <a
-                  href={linkPreview}
-                  target="_blank"
-                  class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
-                >
-                  Preview
-                </a>
+              <p class="mb-4 text-sm leading-relaxed text-neutral">{summary}</p>
+
+              {/* Technology tags */}
+              {tags && tags.length > 0 && (
+                <div class="mb-4 flex flex-wrap gap-1.5">
+                  {tags.map((tag) => (
+                    <span class="glass-badge px-2.5 py-1 text-[0.7rem] font-medium text-primary-light">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              <div class="mt-auto flex gap-5 pb-6 text-sm text-white">
+                {linkSource && linkSource !== "#" && (
+                  <a
+                    href={linkSource}
+                    target="_blank"
+                    class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:text-primary hover:underline"
+                  >
+                    Source
+                  </a>
+                )}
+                {linkPreview && linkPreview !== "#" && (
+                  <a
+                    href={linkPreview}
+                    target="_blank"
+                    class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:text-primary hover:underline"
+                  >
+                    Preview
+                  </a>
+                )}
+                {(!linkSource || linkSource === "#") && (!linkPreview || linkPreview === "#") && (
+                  <span class="text-sm text-neutral/50 italic">Proyecto privado</span>
+                )}
               </div>
             </div>
-            <div class="flex items-end justify-end overflow-hidden">
+            <div class="relative z-10 flex items-end justify-end overflow-hidden">
               <Image
-                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-none object-top-left sm:h-[85%] sm:w-full"
+                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-cover object-top-left sm:h-[85%] sm:w-full"
                 src={image}
                 alt={name}
                 width="736"

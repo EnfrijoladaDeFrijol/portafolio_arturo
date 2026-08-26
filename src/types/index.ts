@@ -13,6 +13,8 @@ export interface SiteContent {
   experience: ExperienceProps[];
   projects: ProjectProps[];
   about: AboutProps;
+  skills: SkillCategory[];
+  highlights: HighlightGroup[];
 }
 
 export interface HeroProps {
@@ -20,6 +22,7 @@ export interface HeroProps {
   specialty: string;
   summary: string;
   email: string;
+  location: string;
 }
 
 export interface ExperienceProps {
@@ -36,6 +39,7 @@ export interface ProjectProps {
   image: string;
   linkPreview?: string;
   linkSource?: string;
+  tags?: string[];
 }
 
 export interface AboutProps {
@@ -46,4 +50,20 @@ export interface AboutProps {
 export interface HeaderProps {
   siteLogo: string;
   navLinks: { text: string; href: string }[];
+}
+
+export interface SkillCategory {
+  category: string;
+  items: string[];
+}
+
+export interface HighlightGroup {
+  icon: string;
+  title: string;
+  items: HighlightItem[];
+}
+
+export interface HighlightItem {
+  text: string;
+  link?: string;
 }

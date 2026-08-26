@@ -1,27 +1,46 @@
 ---
 import type { HeroProps } from "@types";
+
 type Props = HeroProps;
 
-const { name, specialty, summary, email } = Astro.props;
+const { name, specialty, summary, email, location } = Astro.props;
+
+const quickSkills = ["Next.js", "TypeScript", "Linux", "Docker", "Arduino"];
 ---
 
-<section class="py-24 md:py-32" id="#hero">
+<section class="py-24 md:py-32" id="hero">
+  <p class="mb-4 flex items-center gap-2 text-sm text-primary">
+    <span class="inline-block h-2 w-2 animate-glow-pulse rounded-full bg-primary"></span>
+    <span>{location}</span>
+  </p>
   <h1
     class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl"
   >
     {name}
   </h1>
   <p
-    class="mb-9 font-serif text-4xl leading-11.5 font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
+    class="mb-6 font-serif text-4xl leading-11.5 font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
   >
     {specialty}
   </p>
-  <p class="mb-16 text-base font-normal text-neutral md:text-lg">
+  <p class="mb-8 max-w-2xl text-base font-normal text-neutral md:text-lg">
     {summary}
   </p>
 
+  <div class="mb-10 flex flex-wrap gap-2">
+    {
+      quickSkills.map((skill) => (
+        <span class="glass-badge px-3 py-1.5 text-xs font-medium text-primary-light">
+          {skill}
+        </span>
+      ))
+    }
+  </div>
+
   <a
-    class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-    href={`mailto:${email}`}>Get in Touch</a
+    class="glass-btn inline-block rounded-full px-8 py-4 text-sm leading-5 font-medium text-primary-light"
+    href={`mailto:${email}`}
   >
+    {email}
+  </a>
 </section>
